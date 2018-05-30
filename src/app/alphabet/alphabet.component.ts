@@ -15,6 +15,7 @@ export class AlphabetComponent implements OnInit {
   repeatInterval = "1";
   shuffle = true;
   playing = false;
+  playSupported = true;
 
   content = [];
   cursor = 0;
@@ -24,6 +25,10 @@ export class AlphabetComponent implements OnInit {
 
   ngOnInit() {
     this.generateContent();
+    let synth = window.speechSynthesis;
+    if (!synth) {
+      this.playSupported = false;
+    }
   }
   ngOnDestroy() {
     this.playing = false;

@@ -44,7 +44,7 @@
     </button>    
   </mat-expansion-panel>
 </mat-accordion>
-<button mat-fab (click)="play()">
+<button mat-fab (click)="play()" [disabled]="!playSupported">
   <mat-icon>{{playing?"pause":"play_arrow"}}</mat-icon>
 </button>
 
