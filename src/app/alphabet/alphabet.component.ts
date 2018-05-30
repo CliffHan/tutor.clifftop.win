@@ -71,7 +71,13 @@ export class AlphabetComponent implements OnInit {
     } else {
       this.cursor += 1;
       this.repeatCursor = 0;
-      window.setTimeout(() => { this.read(); }, interval*1000);
+      if (this.cursor >= this.content.length) {
+        this.playing = false;
+        this.cursor = 0;
+        this.repeatCursor = 0;
+      } else {
+        window.setTimeout(() => { this.read(); }, interval*1000);
+      }
     }
   }
 
