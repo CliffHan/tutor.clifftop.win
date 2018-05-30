@@ -1,0 +1,54 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.vertical-spacer {
+  flex-grow: 1;
+}
+
+.mat-drawer {
+  overflow: hidden;
+}
+
+/* .mat-toolbar > .icon {
+  max-width: calc(100% - 16px);
+  max-height: calc(100% - 16px);
+  padding-right: 8px;
+} */
+/* 
+.drawer-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-sidenav {
+  padding: 20px;
+} */
+
+/* .testpaper {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  font-size: 6mm;
+}
+
+.a4 {
+  width: 21cm;
+  height: 29.7cm;
+}
+
+.paper-container {
+  height: 100%;
+}
+
+.paper-sidenav-content {
+  height: 100%;
+}
+
+@media print {
+  .mat-drawer {
+    display: none;
+  }
+} */

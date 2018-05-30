@@ -1,0 +1,11 @@
+.mat-fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
+
+.letter {
+  display: inline-block;
+  font-size: 32px;
+  margin: 16px;
+}

@@ -1,0 +1,140 @@
+<div fxFlexFill>
+  <mat-toolbar color="primary">
+    <img class="icon" src="/assets/testpaper.png" />
+    <span fxShow="true" fxHide.lt-md="true">{{title}}</span>
+    <span class="spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <button mat-button [matMenuTriggerFor]="appMenu">
+        <mat-icon aria-label="menu icon">iso</mat-icon>
+        <span>数学</span>
+      </button>
+    </div>
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon aria-label="menu icon">menu</mat-icon>
+      </button>
+    </div>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon aria-label="menu icon">iso</mat-icon>
+        <span>数学</span></button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav fxLayout="column">
+      <div fxLayout="column">
+        <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+        <div *ngFor="let urlmap of urlmaps">
+          <a href="{{urlmap.value}}" mat-button>{{urlmap.name}}</a>
+        </div>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+    <router-outlet></router-outlet></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+    <!-- <div fxShow="true" fxHide.lt-md="true" *ngFor="let urlmap of urlmaps">
+      <a href="{{urlmap.value}}" mat-button>{{urlmap.name}}</a>
+    </div> -->
+    <!-- <div fxShow="true" fxHide.lt-md="true">
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon aria-label="menu icon">menu</mat-icon>
+      </button>
+    </div> -->
+    <!-- <div fxShow="true" fxHide.gt-sm="true">      
+      <a href="#" (click)="sidenav.toggle()"><mat-icon>home</mat-icon></a>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon aria-label="menu icon">menu</mat-icon>
+        <span>Text</span>
+      </button>
+      <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+
+
+
+
+
+
+
+
+
+<mat-list>
+  <mat-list-item>
+    <button mat-icon-button>
+      <mat-icon aria-label="menu icon">menu</mat-icon>
+    </button>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <button mat-icon-button>
+      <mat-icon aria-label="math icon">iso</mat-icon>
+    </button>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <button mat-icon-button>
+      <mat-icon aria-label="settings icon">settings</mat-icon>
+    </button>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <button mat-icon-button>
+      <mat-icon aria-label="printer icon" (click)="print()">printer</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+          
+<div id="printarea">
+  John Doe来自英国爱德华三世统治时期，在当时《驱逐法案》的讨论中，虚构了两个人名，一个是John Doe，代表土地所有者；另一个是Richard Roe，是租地的人，他将租来的土地据为己有，而把John Doe赶走了。可见，John Doe最初就是个虚构的人物。后来，John Doe和Richard Roe被广泛用于诉讼程序中对不知姓名当事人的假设的称呼，John Doe通常指收回不动产诉讼中假设的原告，Richard Roe指被告。因此，John Doe现在常用来指“诉讼程序中不知真实姓名的当事人”，也常指代“某人或普通人”，在凶杀案现场，死者身份尚未确认的情况下也可以称作John Doe。有趣的是，Doe和Roe都是一种鹿，doe是母鹿，roe是欧洲的一种鹿。
+</div>
+
+
+
+
+
+
+
+
+
+<mat-drawer-container class="paper-container" autosize>
+    <mat-drawer #drawer class="paper-sidenav" mode="side" opened="true">
+      <mat-list>
+        <mat-list-item>
+          <button mat-icon-button>
+            <mat-icon aria-label="menu icon">menu</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <button mat-icon-button color="accent">
+            <mat-icon aria-label="math icon">iso</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <button mat-icon-button>
+            <mat-icon aria-label="settings icon">settings</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <button mat-icon-button>
+            <mat-icon aria-label="printer icon" (click)="print(drawer)">printer</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+  
+    <div class="paper-sidenav-content printable">
+      Content
+    </div>
+  </mat-drawer-container>

@@ -1,0 +1,53 @@
+<mat-accordion>
+  <mat-expansion-panel expanded="false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        设置
+      </mat-panel-title>
+      <mat-panel-description>
+        调节听写内容
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <mat-select [(value)]="letterCount" placeholder="选择字母数量">
+        <mat-option value="26">所有</mat-option>
+        <mat-option value="5">5</mat-option>
+        <mat-option value="10">10</mat-option>
+        <mat-option value="20">20</mat-option>
+      </mat-select>      
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select [(value)]="readInterval" placeholder="朗读时间间隔">
+        <mat-option value="3">3秒</mat-option>
+        <mat-option value="5">5秒</mat-option>
+        <mat-option value="10">10秒</mat-option>
+      </mat-select>      
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select [(value)]="repeatTimes" placeholder="单个字母重读次数">
+        <mat-option value="0">不重读</mat-option>
+        <mat-option value="1">1次</mat-option>
+        <mat-option value="2">2次</mat-option>
+      </mat-select>      
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select [(value)]="repeatInterval" placeholder="单个字母重读间隔">
+        <mat-option value="1">1秒</mat-option>
+        <mat-option value="3">3秒</mat-option>
+        <mat-option value="5">5秒</mat-option>
+      </mat-select>      
+    </mat-form-field>
+    <br>
+    <mat-checkbox [checked]="shuffle" (change)="shuffle = !shuffle">打乱顺序</mat-checkbox>
+    <button mat-raised-button color="primary" (click)="generateContent()">
+      <span>确认</span>
+    </button>    
+  </mat-expansion-panel>
+</mat-accordion>
+<button mat-fab (click)="play()">
+  <mat-icon>{{playing?"pause":"play_arrow"}}</mat-icon>
+</button>
+
+<div *ngFor="let contentItem of content" class="letter">
+  <span>{{contentItem}}&nbsp;{{contentItem.toLowerCase()}}</span>
+</div>

@@ -1,0 +1,23 @@
+<mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Math Settings
+    </mat-panel-title>
+    <mat-panel-description>
+      Set Conditions
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field>
+    <span matPrefix>Less Than:&nbsp;</span>
+    <input #inputMaxNumber matInput type="number" value="{{maxNumber}}" />
+  </mat-form-field>
+  <mat-action-row>
+    <button mat-button (click)="exec(inputMaxNumber.value)">OK</button>
+  </mat-action-row>  
+</mat-expansion-panel>
+
+<div class="question" *ngFor="let mathItem of mathArray">
+  <div fxLayoutAlign="space-around center">
+    <span>{{mathItem.x}}+{{mathItem.y}}=</span><div class="rectangle"></div><span>&nbsp;;</span>
+  </div>
+</div>

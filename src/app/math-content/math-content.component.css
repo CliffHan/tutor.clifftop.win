@@ -1,0 +1,19 @@
+.question {
+  display: inline-block;
+}
+
+.question span {
+  letter-spacing: 8px;
+  margin-right: 0;
+}
+
+.rectangle {
+  width: 32px;
+  height: 32px;
+  border: 1px dotted #000;
+  display: inline-block;
+}
+
+mat-expansion-panel {
+  margin-bottom: 64px;
+}
