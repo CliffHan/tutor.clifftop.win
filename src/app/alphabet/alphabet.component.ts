@@ -51,8 +51,8 @@ export class AlphabetComponent implements OnInit {
   }
 
   read() {
-    console.log("reading here");
-    console.log(`playing=${this.playing}`);
+    // console.log("reading here");
+    // console.log(`playing=${this.playing}`);
     if (!this.playing) {
       return;
     }
@@ -62,7 +62,7 @@ export class AlphabetComponent implements OnInit {
     let repInterval = parseInt(this.repeatInterval);
     let synth = window.speechSynthesis;
     let utterThis = new SpeechSynthesisUtterance(this.content[this.cursor]);
-    console.log(`interval=${interval}, repeat=${repeat}, repInterval=${repInterval}`);
+    // console.log(`interval=${interval}, repeat=${repeat}, repInterval=${repInterval}`);
     synth.speak(utterThis);
 
     if (this.repeatCursor < repeat) {
