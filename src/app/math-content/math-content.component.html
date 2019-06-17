@@ -21,3 +21,9 @@
     <span>{{mathItem.x}}+{{mathItem.y}}=</span><div class="rectangle"></div><span>&nbsp;;</span>
   </div>
 </div>
+<br>
+<div class="question" *ngFor="let mathItem of mathArray">
+  <div fxLayoutAlign="space-around center">
+    <span>{{mathItem.x}}-{{mathItem.y}}=</span><div class="rectangle"></div><span>&nbsp;;</span>
+  </div>
+</div>
